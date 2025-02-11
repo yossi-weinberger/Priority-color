@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Priority Color",
+  "version": "1.0",
+  "description": "Changes webpage background based on Priority system environment.",
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.priority.example.com/*",
+        "*://priority.example.com/*"
+      ],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
