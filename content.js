@@ -1,11 +1,11 @@
 const url = window.location.hostname;
 let color = "";
 
-if (url.startsWith("priority.")) {
+if (url.match(/^priority\./)) {
     color = "rgba(255, 99, 71, 0.2)"; // Light red - Production
-} else if (url.startsWith("dev.")) {
+} else if (url.match(/^dev\.priority\./)) {
     color = "rgba(50, 205, 50, 0.2)"; // Green - Development
-} else if (url.startsWith("test.")) {
+} else if (url.match(/^test\.priority\./)) {
     color = "rgba(255, 255, 0, 0.2)"; // Yellow - Testing
 }
 
