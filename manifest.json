@@ -1,19 +1,22 @@
 {
   "manifest_version": 3,
   "name": "Priority Color",
-  "version": "1.0",
-  "permissions": [
-    "activeTab"
-  ],
+  "version": "1.1",
+  "description": "Changes webpage background based on Priority system environment.",
+  "permissions": ["activeTab"],
   "background": {
     "service_worker": "background.js"
   },
   "content_scripts": [
     {
-      "matches": [
-        "*://*.priority.electrokubi.com/*"
-      ],
-      "js": ["content.js"]
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "run_at": "document_end"
     }
-  ]
+  ],
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
 }
